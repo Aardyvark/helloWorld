@@ -18,8 +18,9 @@ pipeline {
       stage('Build') {
           agent { docker 'maven:3-alpine' }
           steps {
-              echo 'Hello, Maven'
+              echo 'Building using Maven'
               sh 'mvn --version'
+              sh 'mvn package'
           }
       }
     }
