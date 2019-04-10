@@ -8,16 +8,16 @@ public class HelloWorld {
 		// remote change
 		// another remote change
 		HelloWorld hello = new HelloWorld();
-		
+
 		System.out.println(hello.sayHelloWorld());
 	}
 
 	public String sayHelloWorld() {
 		return getMessage();
 	}
-	
+
 	private static String getMessage() {
-		return "Hello world 2";
+		return "Hello world";
 	}
 
 }
