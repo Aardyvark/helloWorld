@@ -1,2 +1,2 @@
 # helloWorld
-Simple Git learning project
+Simple Git learning project.
