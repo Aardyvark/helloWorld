@@ -32,7 +32,7 @@ pipeline {
             agent { docker 'maven:3-alpine' }
             steps {
               echo 'Publish'
-              sh 'mvn deploy'
+              sh 'mvn docker:push'
             }
         }
     }
