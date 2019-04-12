@@ -15,11 +15,24 @@ pipeline {
 //          sh 'node --version'
 //        }
 //      }
-      stage('Build') {
+      stage('Compiling') {
           agent { docker 'maven:3-alpine' }
           steps {
-              echo 'Building using Maven'
-              sh 'mvn --version'
+              echo 'Compiling'
+              sh 'mvn compile'
+          }
+      }
+      stage('Unit tests') {
+          agent { docker 'maven:3-alpine' }
+          steps {
+              echo 'Unit tests'
+              sh 'mvn test'
+          }
+      }
+      stage('Packaging') {
+          agent { docker 'maven:3-alpine' }
+          steps {
+              echo 'Packaging'
               sh 'mvn package'
           }
       }
