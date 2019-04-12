@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>uk.co.andyfennell.app</groupId>
 	<artifactId>helloWorld</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>helloWorld</name>
 	<url>http://maven.apache.org</url>
@@ -40,7 +40,7 @@
 			    <configuration>
 			        <images>
 			            <image>
-			                <name>%g/docker-demo:0.1</name>
+			                <name>localhost:32800/%g/%a:%l</name>
 			                <build>
 			                    <from>openjdk:9</from>
 			                    <assembly>
