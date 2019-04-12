@@ -40,7 +40,7 @@
 			    <configuration>
 			        <images>
 			            <image>
-			                <name>localhost:32800/%g/%a:%l</name>
+			                <name>localhost:32800/%g/%a:%t</name>
 			                <build>
 			                    <from>openjdk:9</from>
 			                    <assembly>
