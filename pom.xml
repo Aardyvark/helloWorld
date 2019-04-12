@@ -6,7 +6,7 @@
 	<artifactId>helloWorld</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>Maven Quick Start Archetype</name>
+	<name>helloWorld</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
