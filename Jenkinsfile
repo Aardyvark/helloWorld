@@ -7,7 +7,7 @@ pipeline {
                 sh('printenv')
             }
         }
-        stage('Compiling') {
+/*        stage('Compiling') {
             agent { docker 'maven:3-alpine' }
             steps {
                 echo 'Compiling'
@@ -31,6 +31,16 @@ pipeline {
         stage('Publish') {
             agent { docker 'maven:3-alpine' }
             steps {
+              echo 'Publish'
+              sh 'mvn docker:push'
+            }
+        }
+*/        
+        stage('Build / Publish') {
+            agent { docker 'maven:3-alpine' }
+            steps {
+              echo 'Packaging'
+              sh 'mvn package'
               echo 'Publish'
               sh 'mvn docker:push'
             }
