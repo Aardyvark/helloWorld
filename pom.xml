@@ -41,6 +41,7 @@
 			        <images>
 			            <image>
 			                <name>localhost:32800/%g/%a:%t</name>
+<!--
 			                <build>
 			                    <from>openjdk:8-alpine</from>
 			                    <assembly>
@@ -51,11 +52,13 @@
 			                    </ports>
 			                    <cmd>java -jar maven/${project.name}-${project.version}.jar</cmd>
 			                </build>
-<!--
+-->											
 	<build>
+	<assembly>
+			<descriptorRef>artifact</descriptorRef>
+	</assembly>
 		<dockerFile>${project.basedir}/Dockerfile</dockerFile>
 	</build>
--->
 	<run>
 		<ports>
 			<port>8080:8080</port>
