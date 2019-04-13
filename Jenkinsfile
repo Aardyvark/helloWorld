@@ -1,6 +1,5 @@
 pipeline {
-//    agent none
-    agent { docker 'maven:3-alpine' }
+    agent none
     stages {
         stage('Environment') {
             agent any
@@ -9,7 +8,7 @@ pipeline {
             }
         }
         stage('Build / Publish') {
-  //          agent { docker 'maven:3-alpine' }
+            agent { docker 'maven:3-alpine' }
             stages {
                 stage('Build') {
                     steps {
