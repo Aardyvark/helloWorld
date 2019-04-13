@@ -35,14 +35,15 @@ pipeline {
               sh 'mvn docker:push'
             }
         }
-*/        
-        stage('Build / Publish') {
+*/
+        stage('') {
             agent { docker 'maven:3-alpine' }
             stages {
                 stage('Build') {
                     steps {
                       echo 'Packaging'
-                      sh 'mvn clean package'
+                      //sh 'mvn clean package'
+                      sh 'mvn -Dmaven.test.failure.ignore=true install'
                     }
                 }
                 stage('Publish') {
@@ -52,6 +53,12 @@ pipeline {
                     }
                 }
             }
+        }
+    }
+    post {
+        always {
+            //archive "target/**/*"
+            junit 'target/surefire-reports/**/*.xml'
         }
     }
 }
