@@ -41,8 +41,8 @@
 			        <images>
 			            <image>
 			                <name>localhost:32800/%g/%a:%t</name>
-<!--
 			                <build>
+<!--
 			                    <from>openjdk:9</from>
 			                    <assembly>
 			                        <descriptorRef>artifact</descriptorRef>
@@ -51,7 +51,10 @@
 			                        <port>8080</port>
 			                    </ports>
 			                    <cmd>java -jar maven/${project.name}-${project.version}.jar</cmd>
+-->
+												<dockerFile>Dockerfile</dockerFile>
 			                </build>
+<!--
 			                <run>
 			                    <ports>
 			                        <port>8080:8080</port>
