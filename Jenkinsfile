@@ -16,11 +16,11 @@ pipeline {
                       //sh 'mvn clean package'
                       sh 'mvn -Dmaven.test.failure.ignore=true install'
                     }
-                }
-                post {
-                    always {
-                      //archive "target/**/*"
-                      junit 'target/surefire-reports/**/*.xml'
+                    post {
+                        always {
+                          //archive "target/**/*"
+                          junit 'target/surefire-reports/**/*.xml'
+                        }
                     }
                 }
                 stage('Publish') {
