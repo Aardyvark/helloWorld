@@ -1,3 +1,3 @@
 FROM openjdk:8-alpine
-COPY maven/*.jar /maven/app.jar
-CMD java -jar app.jar
+COPY maven /maven
+CMD java -jar helloWorld-0.1-SNAPSHOT.jar
