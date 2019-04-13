@@ -52,7 +52,7 @@
 			                    </ports>
 			                    <cmd>java -jar maven/${project.name}-${project.version}.jar</cmd>
 -->
-												<contextDir>.</contextDir>
+												<contextDir>../../</contextDir>
 			                </build>
 <!--
 			                <run>
