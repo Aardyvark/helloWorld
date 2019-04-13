@@ -36,7 +36,7 @@ pipeline {
             }
         }
 */
-        stage('') {
+        stage('Build / Publish') {
             agent { docker 'maven:3-alpine' }
             stages {
                 stage('Build') {
@@ -54,11 +54,10 @@ pipeline {
                 }
             }
         }
-    }
-    post {
-        always {
-            //archive "target/**/*"
-            junit 'target/surefire-reports/**/*.xml'
+        post {
+            always {
+              //archive "target/**/*"
+              junit 'target/surefire-reports/**/*.xml'
         }
     }
 }
