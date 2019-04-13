@@ -52,7 +52,7 @@
 			                    </ports>
 			                    <cmd>java -jar maven/${project.name}-${project.version}.jar</cmd>
 -->
-												<dockerFile>/Dockerfile</dockerFile>
+												<contextDir>${project.basedir}</contextDir>
 			                </build>
 <!--
 			                <run>
