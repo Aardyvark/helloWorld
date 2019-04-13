@@ -38,11 +38,19 @@ pipeline {
 */        
         stage('Build / Publish') {
             agent { docker 'maven:3-alpine' }
-            steps {
-              echo 'Packaging'
-              sh 'mvn package'
-              echo 'Publish'
-              sh 'mvn docker:push'
+            stages {
+                stage('Build') {
+                    steps {
+                      echo 'Packaging'
+                      sh 'mvn clean package'
+                    }
+                }
+                stage('Publish') {
+                    steps {
+                      echo 'Publish'
+                      sh 'mvn docker:push'
+                    }
+                }
             }
         }
     }
