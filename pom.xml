@@ -57,9 +57,11 @@
 	<build>
 		<!-- filter>@</filter-->
 		<contextDir>${project.basedir}</contextDir>
+<!--
 		<assembly>
 			<descriptorRef>rootWar</descriptorRef>
 		</assembly>
+-->
 	</build>
 	<run>
 		<ports>
