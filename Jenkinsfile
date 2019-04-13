@@ -17,18 +17,18 @@ pipeline {
                       sh 'mvn -Dmaven.test.failure.ignore=true install'
                     }
                 }
+                post {
+                    always {
+                      //archive "target/**/*"
+                      junit 'target/surefire-reports/**/*.xml'
+                    }
+                }
                 stage('Publish') {
                     steps {
                       echo 'Publish'
                       sh 'mvn docker:push'
                     }
                 }
-            }
-        }
-        post {
-            always {
-              //archive "target/**/*"
-              junit 'target/surefire-reports/**/*.xml'
             }
         }
     }
