@@ -52,7 +52,7 @@
 			                    </ports>
 			                    <cmd>java -jar maven/${project.name}-${project.version}.jar</cmd>
 -->
-												<contextDir>../../</contextDir>
+												<contextDir>/var/jenkins_home/workspace/helloWorld_master</contextDir>
 			                </build>
 <!--
 			                <run>
