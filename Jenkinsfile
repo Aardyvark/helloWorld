@@ -1,5 +1,6 @@
 pipeline {
-    agent none
+//    agent none
+    agent { docker 'maven:3-alpine' }
     stages {
         stage('Environment') {
             agent any
@@ -7,37 +8,8 @@ pipeline {
                 sh('printenv')
             }
         }
-/*        stage('Compiling') {
-            agent { docker 'maven:3-alpine' }
-            steps {
-                echo 'Compiling'
-                sh 'mvn compile'
-            }
-        }
-        stage('Unit tests') {
-            agent { docker 'maven:3-alpine' }
-            steps {
-              echo 'Unit tests'
-              sh 'mvn test'
-            }
-        }
-        stage('Packaging') {
-            agent { docker 'maven:3-alpine' }
-            steps {
-              echo 'Packaging'
-              sh 'mvn package'
-            }
-        }
-        stage('Publish') {
-            agent { docker 'maven:3-alpine' }
-            steps {
-              echo 'Publish'
-              sh 'mvn docker:push'
-            }
-        }
-*/
         stage('Build / Publish') {
-            agent { docker 'maven:3-alpine' }
+  //          agent { docker 'maven:3-alpine' }
             stages {
                 stage('Build') {
                     steps {
@@ -58,6 +30,7 @@ pipeline {
             always {
               //archive "target/**/*"
               junit 'target/surefire-reports/**/*.xml'
+            }
         }
     }
 }
