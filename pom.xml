@@ -37,11 +37,11 @@
 			    <groupId>io.fabric8</groupId>
 			    <artifactId>docker-maven-plugin</artifactId>
 			    <version>0.20.1</version>
-<!--
 			    <configuration>
 			        <images>
 			            <image>
 			                <name>localhost:32800/%g/%a:%t</name>
+<!--
 			                <build>
 			                    <from>openjdk:9</from>
 			                    <assembly>
@@ -57,10 +57,10 @@
 			                        <port>8080:8080</port>
 			                    </ports>
 			                </run>
+-->
 			            </image>
 			        </images>
 			    </configuration>
--->
 					<executions>
 			        <execution>
 			            <id>docker:build</id>
