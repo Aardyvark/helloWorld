@@ -41,6 +41,7 @@
 			        <images>
 			            <image>
 			                <name>localhost:32800/%g/%a:%t</name>
+											<alias>myhelloworld-alias</alias>
 <!--
 			                <build>
 			                    <from>openjdk:8-alpine</from>
@@ -52,11 +53,13 @@
 			                    </ports>
 			                    <cmd>java -jar maven/${project.name}-${project.version}.jar</cmd>
 			                </build>
--->											
+-->
 	<build>
+		<!--
 	<assembly>
 			<descriptorRef>artifact</descriptorRef>
 	</assembly>
+-->
 		<dockerFile>${project.basedir}/Dockerfile</dockerFile>
 	</build>
 	<run>
