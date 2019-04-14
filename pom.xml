@@ -78,8 +78,6 @@
 			            <image>
 <!--			                <name>localhost:32800/%g/%a:%t</name> -->
 											<name>localhost:32800/helloworld:0.1</name>
-											<alias>myhelloworld-alias</alias>
-<!--
 			                <build>
 			                    <from>openjdk:8-alpine</from>
 			                    <assembly>
@@ -95,7 +93,7 @@
 		<dockerFile>${project.basedir}/Dockerfile</dockerFile>
 		<assembly>
 			<descriptorRef>artifact-with-dependencies</descriptorRef>
-			<name>target</name>
+			<!--<name>target</name>-->
 		</assembly>
 	</build>
 	<run>
