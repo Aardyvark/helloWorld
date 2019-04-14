@@ -8,7 +8,6 @@
 	<packaging>jar</packaging>
 	<name>helloWorld</name>
 	<url>http://maven.apache.org</url>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -21,7 +20,6 @@
 			https://github.com/fabric8io/docker-maven-plugin/pull/877 to be merged. -->
 		<project.build.finalName>${project.build.finalName}</project.build.finalName>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -38,7 +36,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 -->
-
 			<plugin>
 				<!-- Build an executable JAR -->
 				<groupId>org.apache.maven.plugins</groupId>
@@ -54,7 +51,7 @@
 					</archive>
 				</configuration>
 			</plugin>
-
+<!--
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -72,22 +69,23 @@
 					</execution>
 				</executions>
 			</plugin>
+-->			
 			<plugin>
-			    <groupId>io.fabric8</groupId>
-			    <artifactId>docker-maven-plugin</artifactId>
-			    <version>0.29.0</version>
-			    <configuration>
-			        <images>
-			            <image>
-			                <name>localhost:32800/%g/%a:%t</name>
+		    <groupId>io.fabric8</groupId>
+		    <artifactId>docker-maven-plugin</artifactId>
+		    <version>0.29.0</version>
+		    <configuration>
+	        <images>
+            <image>
+              <name>localhost:32800/%g/%a:%t</name>
 <!--											<name>localhost:32800/helloworld:0.1</name>-->
-											<build>
-												<dockerFile>${project.basedir}/Dockerfile</dockerFile>
-												<assembly>
-													<descriptorRef>artifact-with-dependencies</descriptorRef>
-													<name>output</name>
-												</assembly>
-											</build>
+								<build>
+									<dockerFile>${project.basedir}/Dockerfile</dockerFile>
+									<assembly>
+										<descriptorRef>artifact-with-dependencies</descriptorRef>
+										<name>output</name>
+									</assembly>
+								</build>
 <!--
 											<run>
 												<ports>
@@ -95,18 +93,18 @@
 												</ports>
 											</run>
 -->
-			            </image>
-			        </images>
-			    </configuration>
-					<executions>
-			        <execution>
-			            <id>docker:build</id>
-			            <phase>package</phase>
-			            <goals>
-			                <goal>build</goal>
-			            </goals>
-			        </execution>
-			    </executions>
+	          </image>
+	        </images>
+	    	</configuration>
+				<executions>
+			  	<execution>
+			    	<id>docker:build</id>
+			      <phase>package</phase>
+			      <goals>
+			      	<goal>build</goal>
+			      </goals>
+			    </execution>
+			  </executions>
 			</plugin>
 		</plugins>
 	</build>
