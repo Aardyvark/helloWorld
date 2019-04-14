@@ -37,7 +37,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
--->			
+-->
 
 			<plugin>
 				<!-- Build an executable JAR -->
@@ -80,6 +80,7 @@
 			            <image>
 <!--			                <name>localhost:32800/%g/%a:%t</name> -->
 											<name>localhost:32800/helloworld:0.1</name>
+<!--
 			                <build>
 			                    <from>openjdk:8-alpine</from>
 			                    <assembly>
