@@ -1,3 +1,3 @@
 FROM openjdk:8-alpine
-COPY maven/ app.jar
+COPY target/*.jar app.jar
 CMD java -jar app.jar
