@@ -56,11 +56,10 @@
 			                </build>
 -->
 	<build>
-		<!--
 	<assembly>
 			<descriptorRef>artifact</descriptorRef>
+			<name>target</name>
 	</assembly>
--->
 		<dockerFile>${project.basedir}/Dockerfile</dockerFile>
 		<assembly>
 			<descriptorRef>artifact-with-dependencies</descriptorRef>
