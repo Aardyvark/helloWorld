@@ -34,13 +34,30 @@
 	      </configuration>
 	    </plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 			    <groupId>io.fabric8</groupId>
 			    <artifactId>docker-maven-plugin</artifactId>
 			    <version>0.29.0</version>
 			    <configuration>
 			        <images>
 			            <image>
-			                <name>localhost:32800/%g/%a:%t</name>
+<!--			                <name>localhost:32800/%g/%a:%t</name> -->
+											<name>localhost:32800/helloworld:0.1</name>
 											<alias>myhelloworld-alias</alias>
 <!--
 			                <build>
@@ -61,6 +78,9 @@
 	</assembly>
 -->
 		<dockerFile>${project.basedir}/Dockerfile</dockerFile>
+		<assembly>
+			<descriptorRef>artifact-with-dependencies</descriptorRef>
+		</assembly>		
 	</build>
 	<run>
 		<ports>
