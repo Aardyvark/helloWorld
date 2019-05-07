@@ -17,7 +17,7 @@ public class HelloWorld {
 	}
 
 	private static String getMessage() {
-		return "aHello world";
+		return "Hello world";
 	}
 
 }

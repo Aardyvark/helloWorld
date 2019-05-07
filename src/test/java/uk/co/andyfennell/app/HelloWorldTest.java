@@ -16,7 +16,7 @@ public class HelloWorldTest {
 	@Test
 	public void testShouldFail() {
 		HelloWorld hello = new HelloWorld();
-		assertEquals(hello.sayHelloWorld(), "Goodbye");
+		assertEquals(hello.sayHelloWorld(), "aGoodbye");
 	}
 */
 
